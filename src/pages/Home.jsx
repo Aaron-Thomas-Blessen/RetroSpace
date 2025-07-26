@@ -40,26 +40,37 @@ const HomePage = () => {
       />
 
       {/* Hero Section */}
-      <section id="home" className="h-screen relative flex items-center justify-center bg-gradient-to-b from-gray-900 to-black">
-        <div className="absolute inset-0 bg-black/40" />
+      <section id="home" className="h-screen relative flex items-center justify-center bg-gradient-to-b from-gray-900 to-black overflow-hidden">
+        {/* Video Background */}
+        <video 
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+        >
+          <source src="/space.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/60 z-10" />
         
         {/* Subtle grid pattern */}
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-5 z-20">
           <div className="w-full h-full bg-grid-pattern bg-repeat" style={{
             backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
             backgroundSize: '50px 50px'
           }} />
         </div>
 
-        <div className="relative z-10 text-center max-w-6xl mx-auto px-8">
+        <div className="relative z-30 text-center max-w-6xl mx-auto px-8">
           <h1 className="text-7xl md:text-8xl font-thin mb-6 tracking-wider">
             RETROSPACE
           </h1>
           <h2 className="text-2xl md:text-3xl font-light text-gray-300 mb-8 tracking-wide">
             ENGINEERING THE FUTURE OF FLIGHT
           </h2>
-          
-         
           
           <p className="text-lg text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
             A Futuristic Indian space edutech and
@@ -77,11 +88,9 @@ hands-on STEM programs and real space tech development.
               JOIN OUR MISSION
             </button>
           </div>
-          
-
         </div>
 
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30">
           <ArrowDown size={24} className="text-gray-400 animate-pulse" />
         </div>
       </section>
@@ -171,7 +180,7 @@ hands-on STEM programs and real space tech development.
         </div>
       </section>
 
-      {/* Shop Section */}
+      {/* Program Section */}
       <section id="shop" className="py-24 px-8 bg-gray-900">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
