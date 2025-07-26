@@ -216,13 +216,61 @@ hands-on STEM programs and real space tech development.
                 title: "Guest Talks by ISRO Scientists", 
                 desc: "Interactive sessions with scientists, engineers and astronauts to ignite curiosity and broaden career aspirations." 
               }
-              
             ].map((item, i) => (
               <div key={i} className="bg-black border border-gray-700 p-8 hover:border-gray-600 transition-colors duration-300 h-full flex flex-col">
                 <h3 className="text-xl font-medium mb-4 uppercase tracking-wide text-center">{item.title}</h3>
                 <p className="text-gray-400 font-light leading-relaxed mb-6 text-center flex-grow">{item.desc}</p>
                 <button className="text-white text-sm uppercase tracking-wide hover:text-gray-300 transition-colors duration-300 mx-auto">
                   Learn More →
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Courses Section */}
+      <section id="courses" className="py-24 px-8 bg-black">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-thin mb-8 tracking-wide">
+              OUR EXCITING COURSES
+            </h2>
+
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { 
+                title: "Junior Astronaut", 
+                desc: "Explore the world of astronauts, space science, and life in space through fun and interactive activities." 
+              },
+              { 
+                title: "Junior Pilot", 
+                desc: "Learn how airplanes fly and understand aviation fundamentals with hands-on learning." 
+              },
+              { 
+                title: "Junior Scientist", 
+                desc: "Develop STEM skills with real science experiments, logic puzzles, and problem-solving activities." 
+              },
+              { 
+                title: "Junior Drone Pilot", 
+                desc: "Build, fly, and operate drones safely, understanding drone technology and DGCA rules." 
+              },
+              { 
+                title: "Junior Rocket Scientist", 
+                desc: "Learn about rocket design, propulsion, thrust, and build your own mini rockets." 
+              },
+              { 
+                title: "Junior Satellite Scientist", 
+                desc: "Discover satellite science, orbits, communication, and create your own satellite models." 
+              }
+            ].map((item, i) => (
+              <div key={i} className="bg-gray-900 border border-gray-800 p-8 hover:border-gray-700 transition-colors duration-300 h-full flex flex-col">
+                <h3 className="text-xl font-medium mb-4 uppercase tracking-wide text-center">{item.title}</h3>
+                <p className="text-gray-400 font-light leading-relaxed mb-6 text-center flex-grow">{item.desc}</p>
+                <button className="text-white text-sm uppercase tracking-wide hover:text-gray-300 transition-colors duration-300 mx-auto">
+                  Enroll Now →
                 </button>
               </div>
             ))}
