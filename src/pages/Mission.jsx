@@ -86,7 +86,7 @@ export default function App() {
 
   // --- State Management ---
   const [time, setTime] = useState(0);
-  const [speed, setSpeed] = useState(1);
+  const [speed, setSpeed] = useState(0.1);
   const [isPaused, setIsPaused] = useState(true);
   const [missionStatus, setMissionStatus] = useState('pre-launch'); // 'pre-launch', 'in-transit', 'complete'
   const [hoveredPlanet, setHoveredPlanet] = useState(null);
@@ -203,13 +203,15 @@ export default function App() {
               <stop offset="100%" stopColor="#FF8C00" stopOpacity="0" />
             </radialGradient>
           </defs>
-          <circle cx={SUN_X} cy={SUN_Y} r={SUN_RADIUS + 40} fill="url(#sunGlow)" />
-          <circle cx={SUN_X} cy={SUN_Y} r={SUN_RADIUS} fill="#FFD700" />
+          <g onMouseEnter={() => setHoveredPlanet('Sun')} onMouseLeave={() => setHoveredPlanet(null)} className="cursor-pointer">
+            <circle cx={SUN_X} cy={SUN_Y} r={SUN_RADIUS + 40} fill="url(#sunGlow)" />
+            <circle cx={SUN_X} cy={SUN_Y} r={SUN_RADIUS} fill="#FFD700" />
+          </g>
           
           {Object.entries(planetData).map(([name, data]) => (
             <React.Fragment key={name}>
               <OrbitPath cx={SUN_X} cy={SUN_Y} rx={data.orbitRadius} ry={data.orbitRadius} />
-              <Planet {...data} cx={positions[name].x} cy={positions[name].y} onHover={setHoveredPlanet} />
+              <Planet {...data} name={name} cx={positions[name].x} cy={positions[name].y} onHover={setHoveredPlanet} />
             </React.Fragment>
           ))}
           
@@ -256,8 +258,14 @@ export default function App() {
                     {hoveredPlanet ? (
                     <div className="text-sm text-center">
                         <p className="font-bold text-xl text-white">{hoveredPlanet}</p>
-                        <p className="text-gray-300 mt-1 h-10">{planetData[hoveredPlanet].info}</p>
-                        <p className="text-gray-400 mt-2">Orbit: <span className="font-mono">{planetData[hoveredPlanet].period} Earth Days</span></p>
+                        {hoveredPlanet === 'Sun' ? (
+                            <p className="text-gray-300 mt-1 h-10">The star at the center of the Solar System.</p>
+                        ) : (
+                            <>
+                                <p className="text-gray-300 mt-1 h-10">{planetData[hoveredPlanet].info}</p>
+                                <p className="text-gray-400 mt-2">Orbit: <span className="font-mono">{planetData[hoveredPlanet].period} Earth Days</span></p>
+                            </>
+                        )}
                     </div>
                     ) : (
                     <div className="text-center text-gray-400 italic text-sm pt-8 h-full">Hover over a celestial body for details.</div>
