@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronRight, ArrowDown } from 'lucide-react';
+import Navbar from '../components/Navbar';
 
 const HomePage = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -31,30 +32,12 @@ const HomePage = () => {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrollY > 50 ? 'bg-black/95 backdrop-blur-sm border-b border-gray-800' : 'bg-transparent'
-      }`}>
-        <div className="max-w-7xl mx-auto px-8 py-6">
-          <div className="flex justify-between items-center">
-            <div className="text-2xl font-light tracking-wider text-white">
-              RETROSPACE
-            </div>
-            <div className="hidden md:flex space-x-12">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`text-sm font-medium tracking-wide uppercase transition-colors duration-200 ${
-                    activeSection === item.id ? 'text-white' : 'text-gray-400 hover:text-white'
-                  }`}
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Navbar 
+        scrollY={scrollY}
+        activeSection={activeSection}
+        navItems={navItems}
+        scrollToSection={scrollToSection}
+      />
 
       {/* Hero Section */}
       <section id="home" className="h-screen relative flex items-center justify-center bg-gradient-to-b from-gray-900 to-black">
