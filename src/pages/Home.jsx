@@ -287,24 +287,26 @@ hands-on STEM programs and real space tech development.
                 Contact Us
               </h2>
               <p className="text-lg text-gray-300 leading-relaxed mb-12 font-light">
-                Ready to discuss your space project? Our team of experts is here to help you 
-                find the right solution for your specific requirements.
+                Ready to inspire the next Generation? Get in touch with our team to bring space education to your institution.
               </p>
               
               <div className="space-y-8">
                 <div>
                   <h3 className="text-lg font-medium mb-2 uppercase tracking-wide">Headquarters</h3>
                   <p className="text-gray-400 font-light">
-                    1234 RetroSpace Drive<br />
-                    Houston, TX 77058<br />
-                    United States
+                    A-Block<br />
+Incubation centre <br />
+Hindusthan institute of technology <br />
+Coimbatore<br />
+India
+
                   </p>
                 </div>
                 <div>
                   <h3 className="text-lg font-medium mb-2 uppercase tracking-wide">Contact</h3>
                   <p className="text-gray-400 font-light">
-                    Phone: +1 (555) 123-4567<br />
-                    Email: info@retrospace.com
+                    Phone: +1 (91) 9025627898<br />
+                    Email: info.retrospaceagency@gmail.com
                   </p>
                 </div>
               </div>
@@ -353,8 +355,7 @@ hands-on STEM programs and real space tech development.
             </h2>
             <p className="text-lg text-gray-300 font-light max-w-3xl mx-auto leading-relaxed">
               Join our team of exceptional engineers, scientists, and innovators who are shaping 
-              the future of space technology. We offer competitive compensation, comprehensive 
-              benefits, and the opportunity to work on groundbreaking projects.
+              the future of space technology. We offer the opportunity to work on groundbreaking projects.
             </p>
           </div>
           
@@ -368,30 +369,60 @@ hands-on STEM programs and real space tech development.
             </button>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-xl font-medium mb-6 uppercase tracking-wide">Benefits</h3>
-              <ul className="space-y-3 text-gray-400 font-light">
-                <li>• Competitive salary and performance bonuses</li>
-                <li>• Comprehensive health, dental, and vision insurance</li>
-                <li>• 401(k) retirement plan with company matching</li>
-                <li>• Professional development opportunities</li>
-                <li>• Flexible work arrangements</li>
-                <li>• State-of-the-art facilities and equipment</li>
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-xl font-medium mb-6 uppercase tracking-wide">Culture</h3>
-              <p className="text-gray-400 font-light leading-relaxed">
-                At RetroSpace, we foster a culture of innovation, collaboration, and excellence. 
-                Our team members are passionate about pushing the boundaries of what's possible 
-                in space engineering, working together to solve complex challenges and 
-                deliver solutions that make a real impact on the future of flight.
-              </p>
-            </div>
-          </div>
+          
         </div>
       </section>
+
+      {/* Footer Section */}
+      <footer className="bg-black border-t border-gray-800 py-12 px-8">
+  <div className="max-w-6xl mx-auto text-center">
+    <div className="mb-8">
+      <h3 className="text-2xl font-thin tracking-wide mb-4">RETROSPACE</h3>
+      <p className="text-gray-400 font-light">Engineering the Future of Flight</p>
+    </div>
+    
+    <div className="grid md:grid-cols-4 gap-8 mb-8 text-left">
+      <div>
+        <h4 className="text-white font-medium mb-4">Company</h4>
+        <ul className="space-y-2 text-gray-400 text-sm">
+          <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="#mission" className="hover:text-white transition-colors">Our Mission</a></li>
+          <li><a href="#careers" className="hover:text-white transition-colors">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 className="text-white font-medium mb-4">Programs</h4>
+        <ul className="space-y-2 text-gray-400 text-sm">
+          <li><a href="#shop" className="hover:text-white transition-colors">Education Programs</a></li>
+          <li><a href="#courses" className="hover:text-white transition-colors">Courses</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 className="text-white font-medium mb-4">Contact</h4>
+        <ul className="space-y-2 text-gray-400 text-sm">
+          <li>Coimbatore, India</li>
+          <li>+91 9025627898</li>
+          <li>info.retrospaceagency@gmail.com</li>
+        </ul>
+      </div>
+      <div>
+        <h4 className="text-white font-medium mb-4">Follow Us</h4>
+        <ul className="space-y-2 text-gray-400 text-sm">
+          <li><a href="#" className="hover:text-white transition-colors">LinkedIn</a></li>
+          <li><a href="#" className="hover:text-white transition-colors">Twitter</a></li>
+          <li><a href="#" className="hover:text-white transition-colors">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div className="border-t border-gray-800 pt-8">
+      <p className="text-gray-500 text-sm">
+        © 2024 RetroSpace Agency. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+
     </div>
   );
 };
