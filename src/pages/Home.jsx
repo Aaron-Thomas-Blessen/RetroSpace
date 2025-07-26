@@ -60,8 +60,10 @@ const HomePage = () => {
           </h2>
           
           <p className="text-lg text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
-            Advanced propulsion systems, cutting-edge spacecraft design, and precision engineering 
-            for the next generation of space exploration and commercial aviation.
+            A Futuristic Indian space edutech and
+ research startup, founded by passionate aerospace innovators.
+ We inspire the next generation through space education,
+ hands-on STEM programs and real space tech development.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -70,7 +72,7 @@ const HomePage = () => {
               <ChevronRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
             </button>
             <button className="px-8 py-4 border border-white text-white font-medium text-sm uppercase tracking-wide hover:bg-white hover:text-black transition-all duration-300">
-              Learn More
+              JOIN OUR MISSION
             </button>
           </div>
         </div>
