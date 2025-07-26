@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronRight, ArrowDown } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 
 const HomePage = () => {
   const [scrollY, setScrollY] = useState(0);
   const [activeSection, setActiveSection] = useState('home');
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -18,8 +20,8 @@ const HomePage = () => {
     { id: 'mission', label: 'Our Mission' },
     { id: 'shop', label: 'Programs' },
     { id: 'courses', label: 'Courses' },
-    { id: 'contact', label: 'Contact Us' },
-    { id: 'careers', label: 'Careers' }
+    { id: 'careers', label: 'Careers' },
+    { id: 'contact', label: 'Contact Us' }
   ];
 
   const scrollToSection = (sectionId) => {
@@ -28,6 +30,10 @@ const HomePage = () => {
       element.scrollIntoView({ behavior: 'smooth' });
       setActiveSection(sectionId);
     }
+  };
+
+  const handleJoinMission = () => {
+    navigate('/mission');
   };
 
   return (
@@ -85,7 +91,10 @@ hands-on STEM programs and real space tech development.
               Explore Projects
               <ChevronRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
             </button>
-            <button className="px-8 py-4 border border-white text-white font-medium text-sm uppercase tracking-wide hover:bg-white hover:text-black transition-all duration-300">
+            <button 
+              onClick={handleJoinMission}
+              className="px-8 py-4 border border-white text-white font-medium text-sm uppercase tracking-wide hover:bg-white hover:text-black transition-all duration-300"
+            >
               JOIN OUR MISSION
             </button>
           </div>
@@ -279,6 +288,33 @@ hands-on STEM programs and real space tech development.
         </div>
       </section>
 
+      {/* Careers Section */}
+      <section id="careers" className="py-24 px-8 bg-gray-900">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-5xl font-thin mb-8 tracking-wide">
+              Careers
+            </h2>
+            <p className="text-lg text-gray-300 font-light max-w-3xl mx-auto leading-relaxed">
+              Join our team of exceptional engineers, scientists, and innovators who are shaping 
+              the future of space technology. We offer the opportunity to work on groundbreaking projects.
+            </p>
+          </div>
+          
+          <div className="bg-black border border-gray-800 p-12 text-center mb-12">
+            <h3 className="text-2xl font-light mb-4 tracking-wide">Open Positions</h3>
+            <p className="text-gray-400 font-light mb-8">
+              We are currently seeking talented individuals for various positions across our organization.
+            </p>
+            <button className="px-8 py-4 bg-white text-black font-medium text-sm uppercase tracking-wide hover:bg-gray-200 transition-colors duration-300">
+              View All Openings
+            </button>
+          </div>
+          
+          
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="py-24 px-8 bg-black">
         <div className="max-w-6xl mx-auto">
@@ -347,39 +383,12 @@ India
         </div>
       </section>
 
-      {/* Careers Section */}
-      <section id="careers" className="py-24 px-8 bg-gray-900">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-thin mb-8 tracking-wide">
-              Careers
-            </h2>
-            <p className="text-lg text-gray-300 font-light max-w-3xl mx-auto leading-relaxed">
-              Join our team of exceptional engineers, scientists, and innovators who are shaping 
-              the future of space technology. We offer the opportunity to work on groundbreaking projects.
-            </p>
-          </div>
-          
-          <div className="bg-black border border-gray-800 p-12 text-center mb-12">
-            <h3 className="text-2xl font-light mb-4 tracking-wide">Open Positions</h3>
-            <p className="text-gray-400 font-light mb-8">
-              We are currently seeking talented individuals for various positions across our organization.
-            </p>
-            <button className="px-8 py-4 bg-white text-black font-medium text-sm uppercase tracking-wide hover:bg-gray-200 transition-colors duration-300">
-              View All Openings
-            </button>
-          </div>
-          
-          
-        </div>
-      </section>
-
       {/* Footer Section */}
       <footer className="bg-black border-t border-gray-800 py-12 px-8">
   <div className="max-w-6xl mx-auto text-center">
     <div className="mb-8">
       <h3 className="text-2xl font-thin tracking-wide mb-4">RETROSPACE</h3>
-      <p className="text-gray-400 font-light">Engineering the Future of Flight</p>
+      <p className="text-gray-400 font-light">ONE PROGRAM. ONE DAY. INSPIRATION FOR A LIFETIME.</p>
     </div>
     
     <div className="grid md:grid-cols-4 gap-8 mb-8 text-left">
