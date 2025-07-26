@@ -16,7 +16,8 @@ const HomePage = () => {
     { id: 'home', label: 'Home' },
     { id: 'about', label: 'About' },
     { id: 'mission', label: 'Our Mission' },
-    { id: 'shop', label: 'Shop' },
+    { id: 'shop', label: 'Programs' },
+    { id: 'courses', label: 'Courses' },
     { id: 'contact', label: 'Contact Us' },
     { id: 'careers', label: 'Careers' }
   ];
