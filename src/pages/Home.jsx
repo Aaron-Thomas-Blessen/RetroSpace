@@ -176,27 +176,43 @@ hands-on STEM programs and real space tech development.
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-thin mb-8 tracking-wide">
-              Products & Services
+              Our Unique Programs
             </h2>
             <p className="text-lg text-gray-300 font-light max-w-3xl mx-auto leading-relaxed">
-              Explore our comprehensive range of space components, systems, and engineering services 
-              designed for the most demanding applications.
+              Discover our comprehensive space education programs designed to inspire and educate 
+              the next generation of space enthusiasts, engineers, and scientists.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { title: "Propulsion Systems", desc: "Advanced rocket engines and propulsion technologies" },
-              { title: "Avionics", desc: "Flight control systems and navigation equipment" },
-              { title: "Structural Components", desc: "Lightweight, high-strength space materials" },
-              { title: "Testing Services", desc: "Comprehensive testing and validation solutions" },
-              { title: "Engineering Consulting", desc: "Expert space engineering consultation" },
-              { title: "Maintenance Solutions", desc: "Specialized maintenance and support services" }
+              { 
+                title: "Field Trips to ISRO Centers", 
+                desc: "Organized visits to observatories, museums and ISRO facilities to experience real-world space science applications." 
+              },
+              { 
+                title: "Sky Gazing Programs", 
+                desc: "On-campus astronomy sessions using telescopes to observe celestial bodies and learn practical astronomy fundamentals." 
+              },
+              
+              { 
+                title: "Space Workshops", 
+                desc: "Hands-on activities introducing students to aviation, rockets, satellites and drones with real industry insights." 
+              },
+              { 
+                title: "Aerospace Curriculum & Clubs", 
+                desc: "Space science and STEM programs that develop creative thinking, problem solving, and teamwork skills while exploring the universe." 
+              },
+              { 
+                title: "Guest Talks by ISRO Scientists", 
+                desc: "Interactive sessions with scientists, engineers and astronauts to ignite curiosity and broaden career aspirations." 
+              }
+              
             ].map((item, i) => (
-              <div key={i} className="bg-black border border-gray-700 p-8 hover:border-gray-600 transition-colors duration-300">
-                <h3 className="text-xl font-medium mb-4 uppercase tracking-wide">{item.title}</h3>
-                <p className="text-gray-400 font-light leading-relaxed mb-6">{item.desc}</p>
-                <button className="text-white text-sm uppercase tracking-wide hover:text-gray-300 transition-colors duration-300">
+              <div key={i} className="bg-black border border-gray-700 p-8 hover:border-gray-600 transition-colors duration-300 h-full flex flex-col">
+                <h3 className="text-xl font-medium mb-4 uppercase tracking-wide text-center">{item.title}</h3>
+                <p className="text-gray-400 font-light leading-relaxed mb-6 text-center flex-grow">{item.desc}</p>
+                <button className="text-white text-sm uppercase tracking-wide hover:text-gray-300 transition-colors duration-300 mx-auto">
                   Learn More →
                 </button>
               </div>
