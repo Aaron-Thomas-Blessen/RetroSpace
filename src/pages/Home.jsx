@@ -59,11 +59,13 @@ const HomePage = () => {
             ENGINEERING THE FUTURE OF FLIGHT
           </h2>
           
+         
+          
           <p className="text-lg text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
             A Futuristic Indian space edutech and
- research startup, founded by passionate aerospace innovators.
- We inspire the next generation through space education,
- hands-on STEM programs and real space tech development.
+research startup, founded by passionate aerospace innovators.
+We inspire the next generation through space education,
+hands-on STEM programs and real space tech development.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -75,6 +77,8 @@ const HomePage = () => {
               JOIN OUR MISSION
             </button>
           </div>
+          
+
         </div>
 
         <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
@@ -91,31 +95,39 @@ const HomePage = () => {
                 About RetroSpace
               </h2>
               <p className="text-lg text-gray-300 leading-relaxed mb-6 font-light">
-                Founded on the principles of precision engineering and innovative design, RetroSpace has been 
-                at the forefront of space technology for over two decades. Our team of world-class engineers 
-                and scientists work tirelessly to push the boundaries of what's possible in flight.
+                Retro Space Agency is a futuristic Indian space edutech and
+ research startup, founded by passionate aerospace innovators.
+ We aim to inspire the next generation through space education,
+ hands-on STEM programs and real space tech development like
+ Mars missions and reusable rocket boosters
               </p>
               <p className="text-lg text-gray-300 leading-relaxed mb-8 font-light">
-                From commercial aviation to deep space exploration, our solutions power the vehicles that 
-                connect our world and expand our reach into the cosmos.
+                At Retro Space Agency, we empower kids, students and
+ enthusiasts by making space science accessible, exciting and
+ educational. Our mission is to create future astronauts,
+ scientists, engineers and thinkers through practical learning.
               </p>
               <div className="grid grid-cols-3 gap-8 pt-8 border-t border-gray-700">
                 <div className="text-center">
-                  <div className="text-3xl font-light mb-2">25+</div>
+                  <div className="text-3xl font-light mb-2">4+</div>
                   <div className="text-sm text-gray-400 uppercase tracking-wide">Years Experience</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-light mb-2">150+</div>
-                  <div className="text-sm text-gray-400 uppercase tracking-wide">Projects Delivered</div>
+                  <div className="text-3xl font-light mb-2">5+</div>
+                  <div className="text-sm text-gray-400 uppercase tracking-wide">Programs Launched</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-3xl font-light mb-2">40+</div>
-                  <div className="text-sm text-gray-400 uppercase tracking-wide">Global Partners</div>
+                  <div className="text-3xl font-light mb-2">5+</div>
+                  <div className="text-sm text-gray-400 uppercase tracking-wide">Courses</div>
                 </div>
               </div>
             </div>
-            <div className="bg-gray-800 h-96 flex items-center justify-center">
-              <div className="text-gray-600 text-lg font-light">[ COMPANY IMAGE ]</div>
+            <div className="relative">
+              <img 
+                src="/company.webp" 
+                alt="RetroSpace Company" 
+                className="w-full h-96 object-cover rounded-lg"
+              />
             </div>
           </div>
         </div>
