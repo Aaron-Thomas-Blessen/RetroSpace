@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Navbar = ({ scrollY, activeSection, navItems, scrollToSection }) => {
+const Navbar = ({ scrollY, activeSection, navItems, onNavigate, alwaysDark = false }) => {
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      scrollY > 50 ? 'bg-black/95 backdrop-blur-sm border-b border-gray-800' : 'bg-transparent'
+      alwaysDark || scrollY > 50 ? 'bg-black/95 backdrop-blur-sm border-b border-gray-800' : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-8 py-6">
         <div className="flex justify-between items-center">
@@ -21,7 +21,7 @@ const Navbar = ({ scrollY, activeSection, navItems, scrollToSection }) => {
             {navItems.map((item) => (
               <button
                 key={item.id}
-                onClick={() => scrollToSection(item.id)}
+                onClick={() => onNavigate(item)}
                 className={`text-sm font-medium tracking-wide uppercase transition-colors duration-200 ${
                   activeSection === item.id ? 'text-white' : 'text-gray-400 hover:text-white'
                 }`}

@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronRight, ArrowDown } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 
 const HomePage = () => {
   const [scrollY, setScrollY] = useState(0);
   const [activeSection, setActiveSection] = useState('home');
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -14,14 +15,24 @@ const HomePage = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    // Handle navigation state for scrolling to specific sections
+    if (location.state?.scrollTo) {
+      const timer = setTimeout(() => {
+        scrollToSection(location.state.scrollTo);
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [location.state]);
+
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'mission', label: 'Our Mission' },
-    { id: 'shop', label: 'Programs' },
-    { id: 'courses', label: 'Courses' },
-    { id: 'careers', label: 'Careers' },
-    { id: 'contact', label: 'Contact Us' }
+    { id: 'home', label: 'Home', type: 'scroll' },
+    { id: 'about', label: 'About', type: 'scroll' },
+    { id: 'mission', label: 'Our Mission', type: 'scroll' },
+    { id: 'programs', label: 'Programs', type: 'navigate', path: '/programs' },
+    { id: 'courses', label: 'Courses', type: 'navigate', path: '/courses' },
+    { id: 'careers', label: 'Careers', type: 'scroll' },
+    { id: 'contact', label: 'Contact Us', type: 'scroll' }
   ];
 
   const scrollToSection = (sectionId) => {
@@ -29,6 +40,14 @@ const HomePage = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
       setActiveSection(sectionId);
+    }
+  };
+
+  const handleNavigation = (item) => {
+    if (item.type === 'navigate') {
+      navigate(item.path);
+    } else {
+      scrollToSection(item.id);
     }
   };
 
@@ -43,7 +62,7 @@ const HomePage = () => {
         scrollY={scrollY}
         activeSection={activeSection}
         navItems={navItems}
-        scrollToSection={scrollToSection}
+        onNavigate={handleNavigation}
       />
 
       {/* Hero Section */}

@@ -1,10 +1,38 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Calendar, Users, Clock, MapPin } from 'lucide-react';
+import Navbar from '../components/Navbar';
 
 const Programs = () => {
   const { programId } = useParams();
   const navigate = useNavigate();
+  const [scrollY, setScrollY] = useState(0);
+  const [activeSection, setActiveSection] = useState('programs');
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navItems = [
+    { id: 'home', label: 'Home', type: 'navigate', path: '/' },
+    { id: 'about', label: 'About', type: 'navigate', path: '/' },
+    { id: 'mission', label: 'Our Mission', type: 'navigate', path: '/mission' },
+    { id: 'programs', label: 'Programs', type: 'navigate', path: '/programs' },
+    { id: 'courses', label: 'Courses', type: 'navigate', path: '/courses' },
+    { id: 'careers', label: 'Careers', type: 'navigate', path: '/' },
+    { id: 'contact', label: 'Contact Us', type: 'navigate', path: '/' }
+  ];
+
+  const handleNavigation = (item) => {
+    if (item.path === '/' && (item.id === 'about' || item.id === 'careers' || item.id === 'contact')) {
+      // Navigate to home and then scroll to section
+      navigate('/', { state: { scrollTo: item.id } });
+    } else {
+      navigate(item.path);
+    }
+  };
 
   const programsData = {
     'isro-field-trips': {
@@ -162,7 +190,16 @@ const Programs = () => {
     // Show all programs overview
     return (
       <div className="min-h-screen bg-black text-white">
-        <div className="container mx-auto px-6 py-12">
+        {/* Navigation */}
+        <Navbar 
+          scrollY={scrollY}
+          activeSection={activeSection}
+          navItems={navItems}
+          onNavigate={handleNavigation}
+          alwaysDark={true}
+        />
+        
+        <div className="container mx-auto px-6 py-12 mt-20">
           <div className="mb-8">
             <button 
               onClick={handleBackToHome}
@@ -199,8 +236,17 @@ const Programs = () => {
 
   return (
     <div className="min-h-screen bg-black text-white">
+      {/* Navigation */}
+      <Navbar 
+        scrollY={scrollY}
+        activeSection={activeSection}
+        navItems={navItems}
+        onNavigate={handleNavigation}
+        alwaysDark={true}
+      />
+      
       {/* Header */}
-      <div className="bg-gray-900 py-16">
+      <div className="bg-gray-900 py-16 mt-20">
         <div className="container mx-auto px-6">
           <button 
             onClick={handleBackToHome}
